@@ -1,0 +1,45 @@
+/* Use these colors
+#1abc9c - Turqoise
+#F7F9F9-white
+#8e44ad-Purple
+#211A1D-Black */
+
+
+.bg-color {
+    background: #1abc9c;
+    min-height: 100vh;
+}
+.outer-box{
+  background: #F7F9F9;
+  margin-top: 20%;
+}
+
+.login-textbox{
+  margin-bottom: 5%;
+}
+
+.login-active {
+    border-top: 5px solid #8e44ad;
+}
+.student-header {
+    cursor: pointer;
+}
+.teacher-header {
+    cursor: pointer;
+}
+.login-bottom-box {
+    padding: 10%;
+}
+.no-margin
+{
+  margin: 0;
+}
+.btn-color
+{
+  color: white;
+  background: #8e44ad;
+}
+.hide
+{
+  display: none;
+}
