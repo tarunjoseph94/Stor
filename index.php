@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<?php include 'header.php';?>
-    <title>File Management</title>
+    
 	</head>
 	<body>
 		<div class="container-fluid bg-color">
