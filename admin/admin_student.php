@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php include 'header.php';?>
+		<?php include dirname($_SERVER['DOCUMENT_ROOT']).'/htdocs/Stor/header.php'; ?>
 
 	</head>
 	<body>
@@ -13,16 +13,19 @@
         <a class="navbar-links" href="admin_student.php">Student</a>
         <a class="btn btn-color" href="logout.php">Logout</a>
       </div>
-
     </nav>
+		<nav class="navbar sticky-top bg-nav-lower">
+			<a class="navbar-links" href="#" id="create-student">Create Student</a>
+			<a class="navbar-links" href="#" id="view-student">View Student</a>
+		</nav>
 
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-sm-2">
 				</div>
 				<div class="col-sm-8">
-					<div class="results">
-						
+					<div id="results">
+
 					</div>
 				</div>
 

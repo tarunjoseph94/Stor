@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php include 'header.php';?>
+		<?php dirname($_SERVER['DOCUMENT_ROOT']).'/header.php'; ?>
 
 	</head>
 	<body>

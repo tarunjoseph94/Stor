@@ -63,4 +63,26 @@ $(document).ready(function(){
           });
         }
   });
+  //Create Student scripts
+  $('#create-student').on('click', function (event) {
+
+  event.preventDefault();
+        $.ajax({
+        url: "admin_create_student.php",
+        success:function(result){
+          $("#results").html(result);
+        }});
+
+      });
+  $('#view-student').on('click', function (event) {
+      event.preventDefault();
+            $.ajax({
+            url: "admin_view_student.php",
+            success:function(result){
+              $("#results").html(result);
+            }});
+
+          });
+
+
 });

@@ -1,5 +1,5 @@
 <?php
-include 'db-connect.php';
+ include dirname($_SERVER['DOCUMENT_ROOT']).'/htdocs/Stor/db-connect.php'; 
 session_start();
 function test_input($data) {
 $data = trim($data);
