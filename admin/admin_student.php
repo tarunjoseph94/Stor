@@ -14,7 +14,7 @@
         <a class="btn btn-color" href="logout.php">Logout</a>
       </div>
     </nav>
-		<nav class="navbar sticky-top bg-nav-lower">
+		<nav class="navbar bg-nav-lower">
 			<a class="navbar-links" href="#" id="create-student">Create Student</a>
 			<a class="navbar-links" href="#" id="view-student">View Student</a>
 		</nav>
