@@ -102,10 +102,10 @@
             {
               if(result=='Error')
               {
-                alert("Username or password does not exist");
+                alert("Did not create");
               }
               else {
-                alert("Sucesfully logged in");
+                alert("Sucesfully created");
                 window.location.replace("http://localhost/Stor/admin/admin_student.php");
               }
             }

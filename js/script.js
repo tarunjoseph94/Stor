@@ -63,7 +63,7 @@ $(document).ready(function(){
           });
         }
   });
-  //Create Student scripts
+  //admin Student scripts
   $('#create-student').on('click', function (event) {
 
   event.preventDefault();
@@ -83,6 +83,23 @@ $(document).ready(function(){
             }});
 
           });
+  //Admin Professor Scripts
+  $('#create-professor').on('click', function (event) {
+  event.preventDefault();
+        $.ajax({
+        url: "admin_create_professor.php",
+        success:function(result){
+          $("#results").html(result);
+        }});
 
+      });
+  $('#view-professor').on('click', function (event) {
+      event.preventDefault();
+            $.ajax({
+            url: "admin_view_professor.php",
+            success:function(result){
+              $("#results").html(result);
+            }});
 
+          });
 });

@@ -15,8 +15,8 @@
       </div>
     </nav>
 		<nav class="navbar bg-nav-lower">
-			<a class="navbar-links" href="#" id="create-student">Create Student</a>
-			<a class="navbar-links" href="#" id="view-student">View Student</a>
+			<a class="navbar-links" href="#" id="create-professor">Create Professor</a>
+			<a class="navbar-links" href="#" id="view-professor">View Professors</a>
 		</nav>
 
 		<div class="container-fluid">
