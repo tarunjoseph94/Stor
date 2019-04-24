@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<?php include 'header.php';?>
-    
+
 	</head>
 	<body>
 		<div class="container-fluid bg-color">
@@ -29,12 +29,12 @@
 										<p>
 											USN
 										</p>
-										<input type="text" class="form-control login-textbox" />
+										<input type="text" class="form-control login-textbox" name="student-usn-login" id="student-usn-login" />
 										<p>
 											Password
 										</p>
-										<input type="text" class="form-control login-textbox"/>
-										<input type="submit" class=" btn btn-color" />
+										<input type="password" class="form-control login-textbox" name="student-password-login" id="student-password-login"/>
+										<input type="submit" class=" btn btn-color" id="student-login-submit"/>
 									</form>
 								</div>
 								<div class="teacher-login hide login-bottom-box">
@@ -43,12 +43,12 @@
 										<p>
 											Faculty ID
 										</p>
-										<input type="text" class="form-control login-textbox" />
+										<input type="text" class="form-control login-textbox" name="faculty-id-login" id="faculty-id-login"/>
 										<p>
 											Password
 										</p>
-										<input type="text" class="form-control login-textbox"/>
-										<input type="submit" class=" btn btn-color" />
+										<input type="password" class="form-control login-textbox" name="faculty-password-login" id="faculty-password-login"/>
+										<input type="submit" class=" btn btn-color" name="faculty-login-submit" id="faculty-login-submit"/>
 									</form>
 								</div>
 							</div>

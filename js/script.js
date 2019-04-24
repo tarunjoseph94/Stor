@@ -102,4 +102,232 @@ $(document).ready(function(){
             }});
 
           });
+
+$('#faculty-login-submit').on('click', function (event) {
+            event.preventDefault();
+            var username=document.getElementById("faculty-id-login").value;
+            var pwd=document.getElementById("faculty-password-login").value;
+            if (username == "") {
+              alert(" Please enter your username ");
+              $('html, body').animate({
+                scrollTop: ($('#faculty-id-login').offset().top)
+              }, 500);
+              return false;
+            }
+
+            if (pwd == "") {
+              alert("Please Enter your password");
+              $('html, body').animate({
+                scrollTop: ($('#faculty-password-login').offset().top)
+              }, 500);
+
+              return false;
+            }
+
+                else {
+                  var formData=new FormData();
+                  formData.append('username',username);
+                  formData.append('password',pwd);
+                  //  for (var pair of formData.entries()) {
+                  //  console.log(pair[0]+ ', ' + pair[1]);
+                  //}
+                  $.ajax({
+                  type: "POST",
+                  url: "faculty/faculty_login_ajax.php",
+                  processData: false,
+                  contentType: false,
+                  data:formData,
+                  success:function(result)
+                  {
+                    if(result=='Error')
+                    {
+                      alert("Username or password does not exist");
+                    }
+                    else if (result=="old") {
+                      alert("Sucesfully logged in");
+                      window.location.replace("http://localhost/Stor/faculty/faculty_old_password.php");
+                    }
+                    else {
+                      alert("Sucesfully logged in");
+                      window.location.replace("http://localhost/Stor/faculty/faculty_dashboard.php");
+
+                    }
+                  }
+                  });
+                }
+          });
+$('#faculty-update-password-submit').on('click', function (event) {
+                      event.preventDefault();
+                      var pwd=document.getElementById("faculty-old-password").value;
+                      var conpwd=document.getElementById("faculty-new-password").value;
+                      if (pwd == "") {
+                        alert(" Please enter your password ");
+                        $('html, body').animate({
+                          scrollTop: ($('#faculty-old-password').offset().top)
+                        }, 500);
+                        return false;
+                      }
+
+                      if (conpwd == "") {
+                        alert("Please confirm your password");
+                        $('html, body').animate({
+                          scrollTop: ($('#faculty-new-password').offset().top)
+                        }, 500);
+
+                        return false;
+                      }
+                      if (conpwd != pwd) {
+                        alert("Password and confirm password do not match");
+                        $('html, body').animate({
+                          scrollTop: ($('#faculty-old-password').offset().top)
+                        }, 500);
+
+                        return false;
+                      }
+
+
+                          else {
+                            var formData=new FormData();
+                            formData.append('password',pwd);
+                            //  for (var pair of formData.entries()) {
+                            //  console.log(pair[0]+ ', ' + pair[1]);
+                            //}
+                            $.ajax({
+                            type: "POST",
+                            url: "faculty_update_password_ajax.php",
+                            processData: false,
+                            contentType: false,
+                            data:formData,
+                            success:function(result)
+                            {
+                              if(result=='Success')
+                              {
+                                alert("Sucesfully logged in");
+                                window.location.replace("http://localhost/Stor/faculty/faculty_dashboard.php");
+                              }
+                              else {
+
+                                alert("Password did not update please try again");
+
+                              }
+                            }
+                            });
+                          }
+                    });
+
+$('#student-login-submit').on('click', function (event) {
+                                event.preventDefault();
+                                var username=document.getElementById("student-usn-login").value;
+                                var pwd=document.getElementById("student-password-login").value;
+                                if (username == "") {
+                                  alert(" Please enter your username ");
+                                  $('html, body').animate({
+                                    scrollTop: ($('#student-id-login').offset().top)
+                                  }, 500);
+                                  return false;
+                                }
+
+                                if (pwd == "") {
+                                  alert("Please Enter your password");
+                                  $('html, body').animate({
+                                    scrollTop: ($('#student-password-login').offset().top)
+                                  }, 500);
+
+                                  return false;
+                                }
+
+                                    else {
+                                      var formData=new FormData();
+                                      formData.append('username',username);
+                                      formData.append('password',pwd);
+                                      //  for (var pair of formData.entries()) {
+                                      //  console.log(pair[0]+ ', ' + pair[1]);
+                                      //}
+                                      $.ajax({
+                                      type: "POST",
+                                      url: "student/student_login_ajax.php",
+                                      processData: false,
+                                      contentType: false,
+                                      data:formData,
+                                      success:function(result)
+                                      {
+                                        if(result=='Error')
+                                        {
+                                          alert("Username or password does not exist");
+                                        }
+                                        else if (result=="old") {
+                                          alert("Sucesfully logged in");
+                                          window.location.replace("http://localhost/Stor/student/student_old_password.php");
+                                        }
+                                        else {
+                                          alert("Sucesfully logged in");
+                                          window.location.replace("http://localhost/Stor/student/student_dashboard.php");
+
+                                        }
+                                      }
+                                      });
+                                    }
+                              });
+$('#student-update-password-submit').on('click', function (event) {
+                                          event.preventDefault();
+                                          var pwd=document.getElementById("student-old-password").value;
+                                          var conpwd=document.getElementById("student-new-password").value;
+                                          if (pwd == "") {
+                                            alert(" Please enter your password ");
+                                            $('html, body').animate({
+                                              scrollTop: ($('#student-old-password').offset().top)
+                                            }, 500);
+                                            return false;
+                                          }
+
+                                          if (conpwd == "") {
+                                            alert("Please confirm your password");
+                                            $('html, body').animate({
+                                              scrollTop: ($('#student-new-password').offset().top)
+                                            }, 500);
+
+                                            return false;
+                                          }
+                                          if (conpwd != pwd) {
+                                            alert("Password and confirm password do not match");
+                                            $('html, body').animate({
+                                              scrollTop: ($('#student-old-password').offset().top)
+                                            }, 500);
+
+                                            return false;
+                                          }
+
+
+                                              else {
+                                                var formData=new FormData();
+                                                formData.append('password',pwd);
+                                                //  for (var pair of formData.entries()) {
+                                                //  console.log(pair[0]+ ', ' + pair[1]);
+                                                //}
+                                                $.ajax({
+                                                type: "POST",
+                                                url: "student_update_password_ajax.php",
+                                                processData: false,
+                                                contentType: false,
+                                                data:formData,
+                                                success:function(result)
+                                                {
+                                                  if(result=='Success')
+                                                  {
+                                                    alert("Sucesfully logged in");
+                                                    window.location.replace("http://localhost/Stor/student/student_dashboard.php");
+                                                  }
+                                                  else {
+
+                                                    alert("Password did not update please try again");
+
+                                                  }
+                                                }
+                                                });
+                                              }
+                                        });
+
+
+
+
 });
