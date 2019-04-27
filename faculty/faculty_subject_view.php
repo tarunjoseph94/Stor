@@ -19,11 +19,14 @@
 				<div class="col-sm-2">
 				</div>
 				<div class="col-sm-8">
-					<h2>Welcome</h2>
+					<div class="results">
+            <div class="spacer">
+            </div>
+            <h2>Active subjects</h2>
+
+          </div>
 				</div>
-
 		</div>
-
 	</body>
 	<script src="../js/bootstrap.min.js"></script>
 

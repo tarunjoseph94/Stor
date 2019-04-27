@@ -67,6 +67,9 @@
 .width30 {
     width: 30%;
 }
+.width70 {
+    width: 70%;
+}
 .bg-nav-lower{
   background: #1abc9cb3;
 }
@@ -113,4 +116,8 @@
 .spacer
 {
   margin-top: 3%;
+}
+.width50
+{
+  width: 50%;
 }

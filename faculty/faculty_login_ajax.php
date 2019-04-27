@@ -49,6 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo 'old';
       }
       else {
+        $_SESSION['username']=$username;
         echo "Success";
       }
 

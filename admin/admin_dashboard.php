@@ -8,7 +8,7 @@
     <nav class="navbar sticky-top bg-nav">
       <span class="navbar-brand width25" href="#">Stor</span>
       <div class="navbar-right width25">
-				<a class="navbar-links" href="admin_faculty.php">Faculty</a>
+				<a class="navbar-links" href="admin_professor.php">Faculty</a>
 				<a class="navbar-links" href="admin_student.php">Student</a>
 				<a class="btn btn-color" href="logout.php">Logout</a>
       </div>
