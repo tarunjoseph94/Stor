@@ -142,3 +142,10 @@
 .margintop3{
   margin-top: 3%;
 }
+#files
+{
+  display: none;
+}
+#selectedFiles {
+    text-align: left;
+}
