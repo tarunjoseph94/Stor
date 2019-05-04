@@ -121,3 +121,24 @@
 {
   width: 50%;
 }
+.width40
+{
+  width: 40%;
+}
+.subject-upload-name
+{
+  font-size: 20px;
+  margin-left: 5%;
+}
+.drag-drop-box {
+    border: 1px dashed;
+    height: 200px;
+    width: 100%;
+}
+.file-upload-inside-box {
+    text-align: center;
+
+}
+.margintop3{
+  margin-top: 3%;
+}
