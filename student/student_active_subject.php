@@ -25,6 +25,7 @@
           <div class="subject-list">
 
             <?php
+
             $sql1="SELECT DISTINCT subject_details.subject_id_pk ,subject_details.subject_name FROM subject_details LEFT JOIN student_details ON student_details.batch=subject_details.batch";
             $res=mysqli_query($conn, $sql1);
             while ($row = $res->fetch_assoc()){

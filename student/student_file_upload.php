@@ -3,6 +3,7 @@
 <head>
 	<?php include dirname($_SERVER['DOCUMENT_ROOT']).'/htdocs/Stor/header.php';
 	include dirname($_SERVER['DOCUMENT_ROOT']).'/htdocs/Stor/db-connect.php';
+	$_SESSION['subject_id'] =$_GET['subid'];
 	?>
 </head>
 <body>
@@ -37,7 +38,7 @@
 						<div id="selectedFiles"></div>
 						<div class="spacer">
 						</div>
-						<input type="submit" class="btn btn-color" />
+						<input type="submit" class="btn btn-color" id="student-file-submit" />
 					</form>
 					</div>
 				</div>
@@ -46,6 +47,7 @@
 
 		</body>
 		<script>
+		var uploadFormData=new FormData();
 $(document).ready(function(){
 		$(".drag-drop-box").on(" drop dragdrop", function(e) {
 			//drop dragend dragstart dragenter dragleave drag dragover
@@ -59,13 +61,52 @@ $(document).ready(function(){
 		});
 		$('.drag-drop-box').on('dragover',function(event){
     event.preventDefault();
-})
+		})
+		$('#student-file-submit').on('click', function (event) {
+	    event.preventDefault();
+			var filesUploded=document.getElementById("files");
+			if (filesUploded == "") {
+				alert(" Please enter your files to upload ");
+				$('html, body').animate({
+					scrollTop: ($('#files').offset().top)
+				}, 500);
+				return false;
+			}
+			else {
+				
+				for (var i = 0; i < filesUploded.files.length; i++) {
+					uploadFormData.append("fileToUpload[]",filesUploded.files[i]);
+				}
+				 for (var pair of uploadFormData.entries()) {
+				 console.log(pair[0]+ ', ' + pair[1]);
+				}
+				$.ajax({
+	        type: "POST",
+	        url: "student_file_upload_ajax.php",
+	        processData: false,
+	        contentType: false,
+	        data:uploadFormData,
+	        success:function(result)
+	        {
+	          if(result=='Error')
+	          {
+	            alert("File was not uploaded");
+	          }
+	          else {
+	            alert("File Uploaded");
+	           // window.location.replace("http://localhost/Stor/student/student_dashboard.php");
+
+	          }
+	        }
+	      });
+			}
+		});
 });
 		function processFileUpload(droppedFiles,e) {
 			event.preventDefault();
 			event.stopPropagation();
 	 // add your files to the regular upload form
-		var uploadFormData = new FormData($("#studentfileupload")[0]);
+		uploadFormData = new FormData($("#studentfileupload")[0]);
 		if(droppedFiles.length > 0) { // checks if any files were dropped
 				for(var f = 0; f < droppedFiles.length; f++) { // for-loop for each file dropped
 						uploadFormData.append("files[]",droppedFiles[f]);  // adding every file to the form so you could upload multiple files

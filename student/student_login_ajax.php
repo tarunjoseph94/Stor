@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   {
 
 //      echo "11";
-    $sql1="SELECT password,old_password from student_details WHERE usn_pk='$username'";
+    $sql1="SELECT password,old_password,batch from student_details WHERE usn_pk='$username'";
   //  echo $sql1;
     if($result=mysqli_query($conn,$sql1))
     {
@@ -46,9 +46,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if($user_pwd==$user_old_pwd)
       {
         $_SESSION['username']=$username;
+        $_SESSION['batch']=$user['batch'];
         echo 'old';
       }
       else {
+        $_SESSION['username']=$username;
+        $_SESSION['batch']=$user['batch'];
         echo "Success";
       }
 
