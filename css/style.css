@@ -149,3 +149,10 @@
 #selectedFiles {
     text-align: left;
 }
+.student-file-list {
+    cursor: pointer;
+}
+
+.student-file-list:hover {
+    text-decoration: underline;
+}

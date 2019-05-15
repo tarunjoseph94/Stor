@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php include dirname($_SERVER['DOCUMENT_ROOT']).'/htdocs/Stor/header.php'; ?>
+		<?php include dirname($_SERVER['DOCUMENT_ROOT']).'/htdocs/Stor/header.php';
+				include dirname($_SERVER['DOCUMENT_ROOT']).'/htdocs/Stor/db-connect.php';
+		 ?>
 
 	</head>
 	<body>
@@ -23,7 +25,18 @@
             <div class="spacer">
             </div>
             <h2>Active subjects</h2>
-
+						<?php
+							$username=$_SESSION['username'];
+							$sql1="SELECT * FROM `subject_details` WHERE `professor_id_fk`='$username' AND `status`='1'";
+							$res=mysqli_query($conn, $sql1);
+							while ($row = $res->fetch_assoc()){
+						 ?>
+						 <div class="results">
+							 <div class="row">
+	               <a class="active-subject-name" href="faculty_view_files.php?subid=<?php echo $row['subject_id_pk']; ?>"><?php echo $row['subject_name']; ?></a>
+	             </div>
+						 </div>
+					 <?php } ?>
           </div>
 				</div>
 		</div>
