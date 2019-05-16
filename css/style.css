@@ -20,14 +20,16 @@
   margin-bottom: 5%;
 }
 
-.login-active {
-    border-top: 5px solid #F40000;
-}
 .student-header {
     cursor: pointer;
+    border-top: 5px solid #F7F9F9;
 }
 .teacher-header {
     cursor: pointer;
+      border-top: 5px solid #F7F9F9;
+}
+.login-active {
+  border-top: 5px solid #F40000;
 }
 .login-bottom-box {
     padding: 10%;

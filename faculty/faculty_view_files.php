@@ -23,7 +23,6 @@
 			<div class="col-sm-8">
 				<div class="spacer">
 				</div>
-				<h2>Student List</h2>
 				  <div class="file-upload">
             <div class="subject-status">
 
@@ -33,6 +32,7 @@
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-sm-6">
+											<h2>Student List</h2>
 											<?php
 												$subjectid=$_GET['subid'];
 												$sql1="SELECT DISTINCT `usn_fk` from `file_details` WHERE `subject_id_fk`='$subjectid'";

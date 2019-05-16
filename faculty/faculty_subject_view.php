@@ -33,11 +33,50 @@
 						 ?>
 						 <div class="results">
 							 <div class="row">
-	               <a class="active-subject-name" href="faculty_view_files.php?subid=<?php echo $row['subject_id_pk']; ?>"><?php echo $row['subject_name']; ?></a>
+								 <div class="col-sm-6">
+									 <a class="active-subject-name" href="faculty_view_files.php?subid=<?php echo $row['subject_id_pk']; ?>"><?php echo $row['subject_code']; ?> - <?php echo $row['subject_name']; ?></a>
+								 </div>
+								 <div class="col-sm-6">
+									<button class="btn btn-color" onclick="endActive(<?php echo $row['subject_id_pk']; ?>)">End subject</button>
+								 </div>
 	             </div>
+						 </div>
+						 <div class="spacer">
 						 </div>
 					 <?php } ?>
           </div>
+					<script type="text/javascript">
+						function endActive(subid) {
+							var x=confirm("Are you sure Students will no longer be able to upload files for this subject?")
+							if(x==true)
+							{
+								var formData=new FormData();
+								formData.append('subjectid',subid);
+					      //  for (var pair of formData.entries()) {
+					      //  console.log(pair[0]+ ', ' + pair[1]);
+					      //}
+					      $.ajax({
+					        type: "POST",
+					        url: "faculty_subject_inactive_ajax.php",
+					        processData: false,
+					        contentType: false,
+					        data:formData,
+					        success:function(result)
+					        {
+					          if(result=='Error')
+					          {
+					            alert("Subject could not be ended");
+					          }
+					          else if (result='Success') {
+											alert("Subject is now inactive");
+											window.location.replace("http://localhost/Stor/faculty/faculty_subject_view.php");
+					          }
+					        }
+					      });
+							}
+
+						}
+					</script>
 				</div>
 		</div>
 	</body>
