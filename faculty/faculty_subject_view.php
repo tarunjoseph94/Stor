@@ -4,7 +4,6 @@
 		<?php include dirname($_SERVER['DOCUMENT_ROOT']).'/htdocs/Stor/header.php';
 				include dirname($_SERVER['DOCUMENT_ROOT']).'/htdocs/Stor/db-connect.php';
 		 ?>
-
 	</head>
 	<body>
     <nav class="navbar sticky-top bg-nav">

@@ -160,6 +160,9 @@ $(document).ready(function(){
             event.preventDefault();
             var pwd=document.getElementById("faculty-old-password").value;
             var conpwd=document.getElementById("faculty-new-password").value;
+            var dob=window.dob;
+            var pattern=/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
+
             if (pwd == "") {
               alert(" Please enter your password ");
               $('html, body').animate({
@@ -167,7 +170,21 @@ $(document).ready(function(){
               }, 500);
               return false;
             }
-
+            if (dob == "") {
+              alert("Please Enter you date of Birth");
+              $('html, body').animate({
+                scrollTop: ($('#student-dob').offset().top)
+              }, 500);
+              return false;
+            }
+            if(!pattern.test(dob))
+            {
+              alert("Please Enter you date of Birth in format mm/dd/YYYY");
+              $('html, body').animate({
+                scrollTop: ($('#student-dob').offset().top)
+              }, 500);
+              return false;
+            }
             if (conpwd == "") {
               alert("Please confirm your password");
               $('html, body').animate({
@@ -189,6 +206,7 @@ $(document).ready(function(){
             else {
               var formData=new FormData();
               formData.append('password',pwd);
+              formData.append('dob',dob);
               //  for (var pair of formData.entries()) {
               //  console.log(pair[0]+ ', ' + pair[1]);
               //}
@@ -270,8 +288,11 @@ $(document).ready(function(){
           });
           $('#student-update-password-submit').on('click', function (event) {
             event.preventDefault();
+            //alert(window.dob);
             var pwd=document.getElementById("student-old-password").value;
             var conpwd=document.getElementById("student-new-password").value;
+            var dob=window.dob;
+            var pattern=/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
             if (pwd == "") {
               alert(" Please enter your password ");
               $('html, body').animate({
@@ -288,6 +309,21 @@ $(document).ready(function(){
 
               return false;
             }
+            if (dob == "") {
+              alert("Please Enter you date of Birth");
+              $('html, body').animate({
+                scrollTop: ($('#student-dob').offset().top)
+              }, 500);
+              return false;
+            }
+            if(!pattern.test(dob))
+            {
+              alert("Please Enter you date of Birth in format mm/dd/YYYY");
+              $('html, body').animate({
+                scrollTop: ($('#student-dob').offset().top)
+              }, 500);
+              return false;
+            }
             if (conpwd != pwd) {
               alert("Password and confirm password do not match");
               $('html, body').animate({
@@ -301,6 +337,7 @@ $(document).ready(function(){
             else {
               var formData=new FormData();
               formData.append('password',pwd);
+              formData.append('dob',dob)
               //  for (var pair of formData.entries()) {
               //  console.log(pair[0]+ ', ' + pair[1]);
               //}
@@ -320,6 +357,129 @@ $(document).ready(function(){
                   else {
 
                     alert("Password did not update please try again");
+
+                  }
+                }
+              });
+            }
+          });
+
+
+          $('#faculty-forgot-submit').on('click', function (event) {
+            event.preventDefault();
+            //alert(window.dob);
+            var id=document.getElementById("faculty-id-forgot").value;
+
+            var dob=window.dob;
+            var pattern=/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
+            if (id == "") {
+              alert(" Please enter your password ");
+              $('html, body').animate({
+                scrollTop: ($('#faculty-id-forgot').offset().top)
+              }, 500);
+              return false;
+            }
+
+            if (dob == "") {
+              alert("Please Enter you date of Birth");
+              $('html, body').animate({
+                scrollTop: ($('#student-dob').offset().top)
+              }, 500);
+              return false;
+            }
+            if(!pattern.test(dob))
+            {
+              alert("Please Enter you date of Birth in format mm/dd/YYYY");
+              $('html, body').animate({
+                scrollTop: ($('#faculty-dob').offset().top)
+              }, 500);
+              return false;
+            }
+
+            else {
+              var formData=new FormData();
+              formData.append('id',id);
+              formData.append('dob',dob)
+              //  for (var pair of formData.entries()) {
+              //  console.log(pair[0]+ ', ' + pair[1]);
+              //}
+              $.ajax({
+                type: "POST",
+                url: "faculty/faculty_forgot_password_ajax.php",
+                processData: false,
+                contentType: false,
+                data:formData,
+                success:function(result)
+                {
+                  if(result=='Success')
+                  {
+                    alert("Your password has been rested to your default password.Please contact the adminstaror for more details.");
+                    window.location.replace("http://localhost/Stor/index.php");
+                  }
+                  else {
+
+                    alert("Password has not been reset");
+
+                  }
+                }
+              });
+            }
+          });
+
+
+          $('#student-forgot-submit').on('click', function (event) {
+            event.preventDefault();
+            //alert(window.dob);
+            var id=document.getElementById("student-id-forgot").value;
+            var dob=window.dob;
+            var pattern=/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
+            if (id == "") {
+              alert(" Please enter your password ");
+              $('html, body').animate({
+                scrollTop: ($('#student-id-forgot').offset().top)
+              }, 500);
+              return false;
+            }
+
+            if (dob == "") {
+              alert("Please Enter you date of Birth");
+              $('html, body').animate({
+                scrollTop: ($('#student-dob').offset().top)
+              }, 500);
+              return false;
+            }
+            if(!pattern.test(dob))
+            {
+              alert("Please Enter you date of Birth in format mm/dd/YYYY");
+              $('html, body').animate({
+                scrollTop: ($('#student-dob').offset().top)
+              }, 500);
+              return false;
+            }
+
+            else {
+              var formData=new FormData();
+              formData.append('id',id);
+              formData.append('dob',dob)
+              //  for (var pair of formData.entries()) {
+              //  console.log(pair[0]+ ', ' + pair[1]);
+              //}
+              $.ajax({
+                type: "POST",
+                url: "student/student_forgot_password_ajax.php",
+                processData: false,
+                contentType: false,
+                data:formData,
+                success:function(result)
+                {
+                  if(result=='Success')
+                  {
+                    alert("Your password has been rested to your default password.Please contact the adminstaror for more details.");
+                    window.location.replace("http://localhost/Stor/index.php");
+                  }
+                  else {
+
+                    alert("Password has not been reset");
 
                   }
                 }
@@ -382,4 +542,3 @@ $(document).ready(function(){
 
 
         });
-        

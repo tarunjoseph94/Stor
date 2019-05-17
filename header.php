@@ -13,6 +13,7 @@ if($_SESSION['login_status']==0){
 			<link rel="stylesheet" href="css/bootstrap.min.css" />
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/jquery-ui.min.css" />
+			<link rel="stylesheet" href="css/jquery-ui-1.9.2.custom.css" />
 			<script src="js/jquery.js"></script>
 			<script src="js/bootstrap.min.js"></script>
 			<script src="js/script.js"></script>
@@ -26,6 +27,7 @@ else {
 			<link rel="stylesheet" href="../css/bootstrap.min.css" />
 			<link rel="stylesheet" href="../css/style.css" />
 			<link rel="stylesheet" href="../css/jquery-ui.min.css" />
+			<link rel="stylesheet" href="../css/jquery-ui-1.9.2.custom.css" />
 			<script src="../js/jquery.js"></script>
 			<script src="../js/bootstrap.min.js"></script>
 			<script src="../js/script.js"></script>

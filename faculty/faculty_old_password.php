@@ -18,9 +18,27 @@
 				<div class="col-sm-8">
           <div class="spacer">
           </div>
+					<script>
+					$( function() {
+						$( "#datepicker" ).datepicker({
+							changeMonth: true,
+							changeYear: true,
+							yearRange:"c-70:c",
+							onSelect:function(selectedDate)
+						 {
+									window.dob=selectedDate;
+						 }
+						});
+					} );
+					</script>
           <div class="">
             <h2>Update your password</h2>
             <form>
+							<p>
+								Add Date of Birth
+							</p>
+							<input type="text" class="form-control" id="datepicker" id="faculty-dob" placeholder="mm/dd/YYYY" />
+							<p>
               <p>
                 New password
               </p>

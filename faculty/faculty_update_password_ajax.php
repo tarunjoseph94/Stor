@@ -10,6 +10,7 @@ return $data;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $username=$_SESSION['username'];
   $password=$_POST['password'];
+  $dob=$_POST['dob'];
   $flag=0;
   if (empty($username)) {
     $flag=1;
@@ -23,12 +24,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   {
     $flag=1;
   }
+  if(empty($dob))
+  {
+    $flag=1;
+  }
 
   if($flag==0)
   {
 
 //      echo "11";
-    $sql1="UPDATE `professor_details` SET `password`='$password' WHERE professor_id_pk='$username'";
+    $sql1="UPDATE `professor_details` SET `password`='$password',`dob`='$dob' WHERE professor_id_pk='$username'";
   //  echo $sql1;
     if(mysqli_query($conn,$sql1))
     {

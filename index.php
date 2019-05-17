@@ -36,6 +36,9 @@
 										<input type="password" class="form-control login-textbox" name="student-password-login" id="student-password-login"/>
 										<input type="submit" class=" btn btn-color" id="student-login-submit"/>
 									</form>
+									<div class="spacer">
+									</div>
+									<a href="forgot_password.php">Forgot Password?</a>
 								</div>
 								<div class="teacher-login hide login-bottom-box">
 									<h2>Faculty Login</h2>
@@ -50,6 +53,9 @@
 										<input type="password" class="form-control login-textbox" name="faculty-password-login" id="faculty-password-login"/>
 										<input type="submit" class=" btn btn-color" name="faculty-login-submit" id="faculty-login-submit"/>
 									</form>
+									<div class="spacer">
+									</div>
+									<a href="forgot_password.php">Forgot Password?</a>
 								</div>
 							</div>
 						</div>
