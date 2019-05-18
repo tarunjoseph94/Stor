@@ -7,15 +7,15 @@
     ?>
 	</head>
 	<body>
-    <nav class="navbar sticky-top bg-nav">
+		<nav class="navbar sticky-top bg-nav">
       <span class="navbar-brand width25" href="#">Stor</span>
-      <div class="navbar-right width40">
+      <div class="navbar-right width70">
+        <a class="navbar-links" href="student_list_faculty_files.php">Faculty Files</a>
 				<a class="navbar-links" href="student_active_subject.php">Active Subjects</a>
 				<a class="navbar-links" href="student_prev_subject.php">Previous Subjects</a>
 				<a class="btn btn-color" href="logout.php">Logout</a>
       </div>
-    </nav>
-    <div class="container-fluid">
+    </nav>    <div class="container-fluid">
       <div class="row">
         <div class="col-sm-2">
         </div>
@@ -30,8 +30,7 @@
                     <h3><?php echo $usn; ?></h3>
                     <h5>Subjects</h5>
                     <?php
-
-                      $sql1="SELECT DISTINCT `subject_id_fk`,subject_details.subject_name as subname,subject_details.subject_code as subcode FROM `file_details` JOIN subject_details on `subject_details`.`subject_id_pk`=`file_details`.`subject_id_fk` where file_details.usn_fk='$usn'";
+                      $sql1="SELECT DISTINCT `subject_id_fk`,subject_details.subject_name as subname,subject_details.subject_code as subcode FROM `file_details` JOIN subject_details on `subject_details`.`subject_id_pk`=`file_details`.`subject_id_fk` where file_details.id='$usn'";
                       $res=mysqli_query($conn, $sql1);
                       while ($row = $res->fetch_assoc()){
                      ?>

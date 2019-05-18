@@ -8,7 +8,7 @@
    while ($row = $res2->fetch_assoc()){
      $batch=$row['batch'];
    }
-   $sql1 = "SELECT `file_name` FROM `file_details` WHERE `subject_id_fk`='$subjectid' AND `usn_fk`='$usn'";
+   $sql1 = "SELECT `file_name` FROM `file_details` WHERE `subject_id_fk`='$subjectid' AND `id`='$usn'";
    $res=mysqli_query($conn, $sql1);
    ?>
    <h4>Download Files</h4>

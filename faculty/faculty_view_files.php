@@ -25,7 +25,9 @@
 				</div>
 				  <div class="file-upload">
             <div class="subject-status">
-
+						</div>
+						<div class="faculty-upload">
+							<h3><a href="faculty_file_upload.php?subid=<?php echo $_SESSION['subject_id']; ?>">Upload a File</a></h3>
 						</div>
 						<div class="student-list">
 							<div class="results">
@@ -35,12 +37,12 @@
 											<h2>Student List</h2>
 											<?php
 												$subjectid=$_GET['subid'];
-												$sql1="SELECT DISTINCT `usn_fk` from `file_details` WHERE `subject_id_fk`='$subjectid'";
+												$sql1="SELECT DISTINCT `id` from `file_details` WHERE `subject_id_fk`='$subjectid'";
 												$res=mysqli_query($conn, $sql1);
 												while ($row = $res->fetch_assoc()){
 											 ?>
 											 <div class="row">
-												 <span class="file-list" onclick="showFiles('<?php echo $row['usn_fk']; ?>')"><?php echo $row['usn_fk']; ?></span>
+												 <span class="file-list" onclick="showFiles('<?php echo $row['id']; ?>')"><?php echo $row['id']; ?></span>
 											 </div>
 										 <?php } ?>
 										</div>

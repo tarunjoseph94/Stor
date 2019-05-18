@@ -157,6 +157,7 @@
 
 .file-list:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 .file-list {
     margin-left: 5%;

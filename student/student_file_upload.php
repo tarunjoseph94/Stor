@@ -9,7 +9,8 @@
 <body>
 	<nav class="navbar sticky-top bg-nav">
 		<span class="navbar-brand width25" href="#">Stor</span>
-		<div class="navbar-right width40">
+		<div class="navbar-right width70">
+			<a class="navbar-links" href="student_list_faculty_files.php">Faculty Files</a>
 			<a class="navbar-links" href="student_active_subject.php">Active Subjects</a>
 			<a class="navbar-links" href="student_prev_subject.php">Previous Subjects</a>
 			<a class="btn btn-color" href="logout.php">Logout</a>
@@ -48,7 +49,7 @@
 		</body>
 		<script>
 		var uploadFormData=new FormData();
-$(document).ready(function(){
+		$(document).ready(function(){
 		$(".drag-drop-box").on(" drop dragdrop", function(e) {
 			//drop dragend dragstart dragenter dragleave drag dragover
 				event.preventDefault();
@@ -94,7 +95,7 @@ $(document).ready(function(){
 	          }
 	          else {
 	            alert("File Uploaded");
-	           // window.location.replace("http://localhost/Stor/student/student_dashboard.php");
+	           window.location.replace("http://localhost/Stor/student/student_active_subject.php");
 
 	          }
 	        }

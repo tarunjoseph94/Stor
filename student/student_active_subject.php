@@ -6,14 +6,15 @@
     ?>
 	</head>
 	<body>
-    <nav class="navbar sticky-top bg-nav">
-      <span class="navbar-brand width25" href="#">Stor</span>
-      <div class="navbar-right width40">
+		<nav class="navbar sticky-top bg-nav">
+			<span class="navbar-brand width25" href="#">Stor</span>
+			<div class="navbar-right width70">
+				<a class="navbar-links" href="student_list_faculty_files.php">Faculty Files</a>
 				<a class="navbar-links" href="student_active_subject.php">Active Subjects</a>
 				<a class="navbar-links" href="student_prev_subject.php">Previous Subjects</a>
 				<a class="btn btn-color" href="logout.php">Logout</a>
-      </div>
-    </nav>
+			</div>
+		</nav>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-sm-2">

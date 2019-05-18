@@ -39,7 +39,7 @@
     } else {
 
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"][$i], $target_file)) {
-            $sql1="INSERT INTO file_details(file_name,usn_fk,subject_id_fk) VALUES ('$filename','$username','$subjectid')";
+            $sql1="INSERT INTO file_details(file_name,id,subject_id_fk) VALUES ('$filename','$username','$subjectid')";
             echo $sql1;
             if (mysqli_query($conn, $sql1)) {
             echo "Success";

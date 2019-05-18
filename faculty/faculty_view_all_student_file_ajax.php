@@ -4,7 +4,7 @@ session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $batch=$_POST['batch'];
-        $sql1="SELECT DISTINCT `usn_fk` as usn FROM `file_details` JOIN student_details on `student_details`.`usn_pk`=`file_details`.`usn_fk` where student_details.batch='$batch'";
+        $sql1="SELECT DISTINCT `id` as usn FROM `file_details` JOIN student_details on `student_details`.`usn_pk`=`file_details`.`usn_fk` where student_details.batch='$batch'";
         $res=mysqli_query($conn, $sql1);
 
         ?>
