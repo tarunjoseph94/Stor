@@ -10,7 +10,7 @@ return $data;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $username=$_POST['username'];
 
-  $password=$_POST['password'];
+  $password=md5($_POST['password']);
   $flag=0;
   if (empty($username)) {
     $flag=1;
@@ -36,7 +36,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     {
     $user=$result->fetch_assoc();
     $user_pwd=$user['password'];
-    $user_old_pwd=$user['old_password'];
+    //echo $password." ".$user['password'];
+    $user_old_pwd=md5($user['old_password']);
     //echo $user_pwd;
     //echo " xyz ".$pwd;
     if($password==$user_pwd)

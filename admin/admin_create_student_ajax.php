@@ -56,6 +56,7 @@ function generateRandomPassword($length = 8) {
     //      echo "11";
     while($count!=$usnend+1){
       $pwd=generateRandomPassword();
+      $newpwd=md5($pwd);
       if($count<10)
       {
         $count+=1;
@@ -63,12 +64,13 @@ function generateRandomPassword($length = 8) {
         $usn=$usnformat."0".$count;
         $sql1="INSERT INTO student_details
         (usn_pk,password,batch,old_password)
-        VALUES ('$usn','$pwd','$batch','$pwd') ";
+        VALUES ('$usn','$newpwd','$batch','$pwd') ";
       }
       else {
+        $newpwd=md5($pwd);
         $sql1="INSERT INTO student_details
         (usn_pk,password,batch,old_password)
-        VALUES ('$usnformat$count','$pwd','$batch','$pwd') ";
+        VALUES ('$usnformat$count','$newpwd','$batch','$pwd') ";
       }
 
         if (mysqli_query($conn, $sql1)) {

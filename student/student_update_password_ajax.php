@@ -9,7 +9,7 @@ return $data;
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $username=$_SESSION['username'];
-  $password=$_POST['password'];
+  $password=md5($_POST['password']);
   $dob=$_POST['dob'];
   $flag=0;
   if (empty($username)) {

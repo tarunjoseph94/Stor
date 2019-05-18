@@ -29,9 +29,10 @@ function generateRandomPassword($length = 8) {
   if($flag==0)
   {
         $pwd=generateRandomPassword();
+        $newpwd=md5($pwd);
         $sql1="INSERT INTO professor_details
         (professor_id_pk,password,old_password)
-        VALUES ('$professorid','$pwd','$pwd') ";
+        VALUES ('$professorid','$newpwd','$pwd') ";
 
         if (mysqli_query($conn, $sql1)) {
         echo "Everything is sucessful";

@@ -73,7 +73,7 @@ $(document).ready(function(){
 				return false;
 			}
 			else {
-				
+
 				for (var i = 0; i < filesUploded.files.length; i++) {
 					uploadFormData.append("fileToUpload[]",filesUploded.files[i]);
 				}
@@ -109,7 +109,7 @@ $(document).ready(function(){
 		uploadFormData = new FormData($("#studentfileupload")[0]);
 		if(droppedFiles.length > 0) { // checks if any files were dropped
 				for(var f = 0; f < droppedFiles.length; f++) { // for-loop for each file dropped
-						uploadFormData.append("files[]",droppedFiles[f]);  // adding every file to the form so you could upload multiple files
+						uploadFormData.append("fileToUpload[]",droppedFiles[f]);  // adding every file to the form so you could upload multiple files
 
 				}
 		}

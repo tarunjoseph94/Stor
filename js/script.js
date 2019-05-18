@@ -279,7 +279,7 @@ $(document).ready(function(){
                   }
                   else {
                     alert("Sucesfully logged in");
-                    window.location.replace("http://localhost/Stor/student/student_dashboard.php");
+                    window.location.replace("http://localhost/Stor/student/student_active_subject.php");
 
                   }
                 }
@@ -352,7 +352,7 @@ $(document).ready(function(){
                   if(result=='Success')
                   {
                     alert("Sucesfully logged in");
-                    window.location.replace("http://localhost/Stor/student/student_dashboard.php");
+                    window.location.replace("http://localhost/Stor/student/student_active_subject.php");
                   }
                   else {
 

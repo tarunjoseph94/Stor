@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     while ($rows = $res->fetch_assoc()){
       if($username==$rows['professor_id_pk'])
       {
-        $password=$rows['old_password'];
+        $password=md5($rows['old_password']);
         $sql2="UPDATE `professor_details` SET `password`='$password' WHERE professor_id_pk='$username'";
       //  echo $sql1;
         if(mysqli_query($conn,$sql2))
