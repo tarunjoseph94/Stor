@@ -17,7 +17,7 @@
      $targetpath="../Uploads/".$batch."/".$usn."/".$subjectid."/".$row['file_name'];
   ?>
   <div class="row">
-    <a href="<?php echo $targetpath; ?>" download><?php echo $row['file_name']; ?></a>
+    <a href="<?php echo $targetpath; ?>" class="file-list" download><?php echo $row['file_name']; ?></a>
   </div>
 <?php
  }

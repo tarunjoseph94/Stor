@@ -20,6 +20,9 @@
 				</div>
 				<div class="col-sm-8">
 					<div class="results">
+						<div class="spacer">
+							
+						</div>
             <div class="view-students">
             <h2>View Students</h2>
               <?php

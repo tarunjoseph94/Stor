@@ -149,7 +149,7 @@ $(document).ready(function(){
                   }
                   else {
                     alert("Sucesfully logged in");
-                    window.location.replace("http://localhost/Stor/faculty/faculty_dashboard.php");
+                    window.location.replace("http://localhost/Stor/faculty/faculty_subject_view.php");
 
                   }
                 }
@@ -221,7 +221,7 @@ $(document).ready(function(){
                   if(result=='Success')
                   {
                     alert("Sucesfully logged in");
-                    window.location.replace("http://localhost/Stor/faculty/faculty_dashboard.php");
+                    window.location.replace("http://localhost/Stor/faculty/faculty_subject_view.php");
                   }
                   else {
 
@@ -529,7 +529,7 @@ $(document).ready(function(){
                   if(result=='Success')
                   {
                     alert("Sucesfully created");
-                    window.location.replace("http://localhost/Stor/faculty/faculty_dashboard.php");
+                    window.location.replace("http://localhost/Stor/faculty/faculty_subject_view.php");
                   }
                   else {
                     alert("Subject has not been created please try again");

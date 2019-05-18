@@ -38,7 +38,7 @@
                       while ($row = $res->fetch_assoc()){
                      ?>
                      <div class="row">
-                       <span class="student-file-list" onclick="showFiles('<?php echo $row['subject_id_fk']; ?>')"><?php echo $row['subcode']; ?> - <?php echo $row['subname']; ?> </span>
+                       <span class="file-list" onclick="showFiles('<?php echo $row['subject_id_fk']; ?>')"><?php echo $row['subcode']; ?> - <?php echo $row['subname']; ?> </span>
                      </div>
                    <?php } ?>
                   </div>

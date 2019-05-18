@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               while ($rows = $res->fetch_assoc()){
                 ?>
                 <div class="row">
-                  <a href="faculty_view_student_file.php?usn=<?php echo $rows['usn'];?>"><?php echo $rows['usn'];?></a>
+                  <a class="usn-list" href="faculty_view_student_file.php?usn=<?php echo $rows['usn'];?>"><?php echo $rows['usn'];?></a>
                 </div>
               <?php } ?>
               </div>

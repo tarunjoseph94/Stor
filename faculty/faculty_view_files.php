@@ -40,7 +40,7 @@
 												while ($row = $res->fetch_assoc()){
 											 ?>
 											 <div class="row">
-												 <span class="student-file-list" onclick="showFiles('<?php echo $row['usn_fk']; ?>')"><?php echo $row['usn_fk']; ?></span>
+												 <span class="file-list" onclick="showFiles('<?php echo $row['usn_fk']; ?>')"><?php echo $row['usn_fk']; ?></span>
 											 </div>
 										 <?php } ?>
 										</div>

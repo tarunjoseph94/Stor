@@ -155,6 +155,13 @@
     cursor: pointer;
 }
 
-.student-file-list:hover {
+.file-list:hover {
     text-decoration: underline;
+}
+.file-list {
+    margin-left: 5%;
+}
+.usn-list
+{
+  margin-left: 3%;
 }
