@@ -15,12 +15,12 @@ $res=mysqli_query($conn, $sql1);
 </div>
   <div class="row">
     <div class="col-sm-3">
-      <h5>Professor Id</h5>
+      <h5>Faculty Id</h5>
     </div>
     <div class="col-sm-3">
       <h5>Password</h5>
     </div>
-    <a href='#' class="btn btn-color" onclick='downloadCSV({ filename: "test.csv"  });' >Download CSV</a>
+    <a href='#' class="btn btn-color" onclick='downloadCSV({ filename: "faculty.csv"  });' >Download CSV</a>
   </div>
   <script type="text/javascript">
   var stockData=<?php echo $jsondata; ?>;

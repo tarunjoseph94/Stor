@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="col-sm-3">
               <h5>Password</h5>
             </div>
-            <a href='#' class="btn btn-color" onclick='downloadCSV({ filename: "test.csv"  });' >Download CSV</a>
+            <a href='#' class="btn btn-color" onclick='downloadCSV({ filename: "student.csv"  });' >Download CSV</a>
           </div>
           <script type="text/javascript">
           var stockData=<?php echo $jsondata; ?>;

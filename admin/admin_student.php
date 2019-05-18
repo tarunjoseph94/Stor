@@ -9,7 +9,7 @@
     <nav class="navbar sticky-top bg-nav">
       <span class="navbar-brand" href="#">Stor</span>
       <div class="navbar-right width30">
-        <a class="navbar-links" href="admin_professor.php">Professor</a>
+        <a class="navbar-links" href="admin_professor.php">Faculty</a>
         <a class="navbar-links" href="admin_student.php">Student</a>
         <a class="btn btn-color" href="logout.php">Logout</a>
       </div>

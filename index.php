@@ -18,7 +18,7 @@
 										<span>Student</span>
 									</div>
 									<div class="col-sm-6 teacher-header">
-										<span>Teacher</span>
+										<span>Faculty</span>
 									</div>
 								</div>
 							</div>
