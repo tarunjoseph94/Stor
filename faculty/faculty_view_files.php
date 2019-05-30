@@ -4,6 +4,8 @@
 	<?php include dirname($_SERVER['DOCUMENT_ROOT']).'/htdocs/Stor/header.php';
 	include dirname($_SERVER['DOCUMENT_ROOT']).'/htdocs/Stor/db-connect.php';
 	$_SESSION['subject_id'] =$_GET['subid'];
+	$tid=$_SESSION['username'];
+	echo $tid;
 	?>
 </head>
 <body>
@@ -39,12 +41,23 @@
 												$subjectid=$_GET['subid'];
 												$sql1="SELECT DISTINCT `id` from `file_details` WHERE `subject_id_fk`='$subjectid'";
 												$res=mysqli_query($conn, $sql1);
-												while ($row = $res->fetch_assoc()){
+												 $res->fetch_assoc();
+												foreach($res as $row ){
+													if($row['id'] !=  $tid) {
 											 ?>
 											 <div class="row">
 												 <span class="file-list" onclick="showFiles('<?php echo $row['id']; ?>')"><?php echo $row['id']; ?></span>
 											 </div>
-										 <?php } ?>
+										 <?php } 	} ?>
+										 <h2>My Files</h2>
+										 <?php
+											foreach($res as $row ){
+												 if($row['id'] ==  $tid) {
+											?>
+											<div class="row">
+												<span class="file-list" onclick="showFiles('<?php echo $row['id']; ?>')"><?php echo $row['id']; ?></span>
+											</div>
+										<?php } 	} ?>
 										</div>
 										<div class="col-sm-6">
 											<div class="container-fluid">

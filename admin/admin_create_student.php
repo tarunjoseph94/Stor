@@ -11,7 +11,7 @@
     <p>
       Enter USN Format
     </p>
-    <input type="text" id="usnformat" name="usnformat" class="form-control createstudent" placeholder="1MS19MS"/>
+    <input type="text" id="usnformat" name="usnformat" class="form-control createstudent" placeholder="1MS19MCA"/>
     <div class="spacer">
     </div>
     <div class="row">

@@ -16,6 +16,7 @@
     </nav>
 		<nav class="navbar bg-nav-lower">
 			<a class="navbar-links" href="#" id="create-student">Create Student</a>
+			<a class="navbar-links" href="#" id="delete-student">Delete Student</a>
 			<a class="navbar-links" href="#" id="view-student">View Student</a>
 		</nav>
 

@@ -3,7 +3,7 @@
  if ($_SERVER["REQUEST_METHOD"] == "POST") {
    $usn=$_POST['usn'];
    $subjectid=$_POST['subjectid'];
-   $sql2 = "SELECT `batch` FROM `student_details` WHERE `usn_pk`='$usn'";
+   $sql2 = "SELECT `batch` FROM `subject_details` WHERE `subject_id_pk`='$subjectid'";
    $res2=mysqli_query($conn, $sql2);
    while ($row = $res2->fetch_assoc()){
      $batch=$row['batch'];

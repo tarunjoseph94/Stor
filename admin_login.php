@@ -24,7 +24,7 @@
 											Password
 										</p>
 										<input type="password" class="form-control login-textbox" name="admin-password" id="password"/>
-										<input type="submit" class=" btn btn-color" id="login-admin-submit"/>
+										<input type="submit" value="Login" class=" btn btn-color" id="login-admin-submit"/>
 									</form>
 								</div>
 							</div>

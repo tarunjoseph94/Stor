@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
   // Toggle betwwen diffrent login forms
   $(".student-header").click(function(){
     $(".student-header").addClass("login-active");
@@ -25,16 +24,13 @@ $(document).ready(function(){
       }, 500);
       return false;
     }
-
     if (pwd == "") {
       alert("Please Enter your password");
       $('html, body').animate({
         scrollTop: ($('#password').offset().top)
       }, 500);
-
       return false;
     }
-
     else {
       var formData=new FormData();
       formData.append('username',username);
@@ -57,7 +53,6 @@ $(document).ready(function(){
           else {
             alert("Sucesfully logged in");
             window.location.replace("http://localhost/Stor/admin/admin_dashboard.php");
-
           }
         }
       });
@@ -65,14 +60,12 @@ $(document).ready(function(){
   });
   //admin Student scripts
   $('#create-student').on('click', function (event) {
-
     event.preventDefault();
     $.ajax({
       url: "admin_create_student.php",
       success:function(result){
         $("#results").html(result);
       }});
-
     });
     $('#view-student').on('click', function (event) {
       event.preventDefault();
@@ -81,8 +74,15 @@ $(document).ready(function(){
         success:function(result){
           $("#results").html(result);
         }});
-
       });
+      $('#delete-student').on('click', function (event) {
+        event.preventDefault();
+        $.ajax({
+          url: "admin_delete_student.php",
+          success:function(result){
+            $("#results").html(result);
+          }});
+        });
       //Admin Professor Scripts
       $('#create-professor').on('click', function (event) {
         event.preventDefault();
@@ -91,7 +91,6 @@ $(document).ready(function(){
           success:function(result){
             $("#results").html(result);
           }});
-
         });
         $('#view-professor').on('click', function (event) {
           event.preventDefault();
@@ -100,9 +99,7 @@ $(document).ready(function(){
             success:function(result){
               $("#results").html(result);
             }});
-
           });
-
           $('#faculty-login-submit').on('click', function (event) {
             event.preventDefault();
             var username=document.getElementById("faculty-id-login").value;
@@ -114,16 +111,13 @@ $(document).ready(function(){
               }, 500);
               return false;
             }
-
             if (pwd == "") {
               alert("Please Enter your password");
               $('html, body').animate({
                 scrollTop: ($('#faculty-password-login').offset().top)
               }, 500);
-
               return false;
             }
-
             else {
               var formData=new FormData();
               formData.append('username',username);
@@ -150,7 +144,6 @@ $(document).ready(function(){
                   else {
                     alert("Sucesfully logged in");
                     window.location.replace("http://localhost/Stor/faculty/faculty_subject_view.php");
-
                   }
                 }
               });
@@ -162,7 +155,6 @@ $(document).ready(function(){
             var conpwd=document.getElementById("faculty-new-password").value;
             var dob=window.dob;
             var pattern=/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
-
             if (pwd == "") {
               alert(" Please enter your password ");
               $('html, body').animate({
@@ -190,7 +182,6 @@ $(document).ready(function(){
               $('html, body').animate({
                 scrollTop: ($('#faculty-new-password').offset().top)
               }, 500);
-
               return false;
             }
             if (conpwd != pwd) {
@@ -198,11 +189,8 @@ $(document).ready(function(){
               $('html, body').animate({
                 scrollTop: ($('#faculty-old-password').offset().top)
               }, 500);
-
               return false;
             }
-
-
             else {
               var formData=new FormData();
               formData.append('password',pwd);
@@ -224,15 +212,12 @@ $(document).ready(function(){
                     window.location.replace("http://localhost/Stor/faculty/faculty_subject_view.php");
                   }
                   else {
-
                     alert("Password did not update please try again");
-
                   }
                 }
               });
             }
           });
-
           $('#student-login-submit').on('click', function (event) {
             event.preventDefault();
             var username=document.getElementById("student-usn-login").value;
@@ -244,16 +229,13 @@ $(document).ready(function(){
               }, 500);
               return false;
             }
-
             if (pwd == "") {
               alert("Please Enter your password");
               $('html, body').animate({
                 scrollTop: ($('#student-password-login').offset().top)
               }, 500);
-
               return false;
             }
-
             else {
               var formData=new FormData();
               formData.append('username',username);
@@ -280,7 +262,6 @@ $(document).ready(function(){
                   else {
                     alert("Sucesfully logged in");
                     window.location.replace("http://localhost/Stor/student/student_active_subject.php");
-
                   }
                 }
               });
@@ -300,13 +281,11 @@ $(document).ready(function(){
               }, 500);
               return false;
             }
-
             if (conpwd == "") {
               alert("Please confirm your password");
               $('html, body').animate({
                 scrollTop: ($('#student-new-password').offset().top)
               }, 500);
-
               return false;
             }
             if (dob == "") {
@@ -329,11 +308,8 @@ $(document).ready(function(){
               $('html, body').animate({
                 scrollTop: ($('#student-old-password').offset().top)
               }, 500);
-
               return false;
             }
-
-
             else {
               var formData=new FormData();
               formData.append('password',pwd);
@@ -355,21 +331,16 @@ $(document).ready(function(){
                     window.location.replace("http://localhost/Stor/student/student_active_subject.php");
                   }
                   else {
-
                     alert("Password did not update please try again");
-
                   }
                 }
               });
             }
           });
-
-
           $('#faculty-forgot-submit').on('click', function (event) {
             event.preventDefault();
             //alert(window.dob);
             var id=document.getElementById("faculty-id-forgot").value;
-
             var dob=window.dob;
             var pattern=/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
             if (id == "") {
@@ -379,7 +350,6 @@ $(document).ready(function(){
               }, 500);
               return false;
             }
-
             if (dob == "") {
               alert("Please Enter you date of Birth");
               $('html, body').animate({
@@ -395,7 +365,6 @@ $(document).ready(function(){
               }, 500);
               return false;
             }
-
             else {
               var formData=new FormData();
               formData.append('id',id);
@@ -417,16 +386,12 @@ $(document).ready(function(){
                     window.location.replace("http://localhost/Stor/index.php");
                   }
                   else {
-
                     alert("Password has not been reset");
-
                   }
                 }
               });
             }
           });
-
-
           $('#student-forgot-submit').on('click', function (event) {
             event.preventDefault();
             //alert(window.dob);
@@ -440,7 +405,6 @@ $(document).ready(function(){
               }, 500);
               return false;
             }
-
             if (dob == "") {
               alert("Please Enter you date of Birth");
               $('html, body').animate({
@@ -456,7 +420,6 @@ $(document).ready(function(){
               }, 500);
               return false;
             }
-
             else {
               var formData=new FormData();
               formData.append('id',id);
@@ -478,15 +441,12 @@ $(document).ready(function(){
                     window.location.replace("http://localhost/Stor/index.php");
                   }
                   else {
-
                     alert("Password has not been reset");
-
                   }
                 }
               });
             }
           });
-
           $('#subject-form-submit').on('click', function (event) {
             event.preventDefault();
             var name=document.getElementById("subject-name-add").value;
@@ -499,17 +459,13 @@ $(document).ready(function(){
               }, 500);
               return false;
             }
-
             if (code == "") {
               alert("Please enter the subject code");
               $('html, body').animate({
                 scrollTop: ($('#subject-code-add').offset().top)
               }, 500);
-
               return false;
             }
-
-
             else {
               var formData=new FormData();
               formData.append('name',name);
@@ -538,7 +494,4 @@ $(document).ready(function(){
               });
             }
           });
-
-
-
         });

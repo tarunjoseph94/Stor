@@ -33,7 +33,7 @@
                     <h5>Subjects</h5>
                     <?php
 
-                      $sql1="SELECT DISTINCT `subject_id_fk`,subject_details.subject_name as subname,subject_details.subject_code as subcode FROM `file_details` JOIN subject_details on `subject_details`.`subject_id_pk`=`file_details`.`subject_id_fk` where file_details.usn_fk='$usn'";
+                      $sql1="SELECT DISTINCT `subject_id_fk`,subject_details.subject_name as subname,subject_details.subject_code as subcode FROM `file_details` JOIN subject_details on `subject_details`.`subject_id_pk`=`file_details`.`subject_id_fk` where file_details.id='$usn'";
                       $res=mysqli_query($conn, $sql1);
                       while ($row = $res->fetch_assoc()){
                      ?>

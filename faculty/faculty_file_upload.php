@@ -4,6 +4,13 @@
   <?php include dirname($_SERVER['DOCUMENT_ROOT']).'/htdocs/Stor/header.php';
   include dirname($_SERVER['DOCUMENT_ROOT']).'/htdocs/Stor/db-connect.php';
   $_SESSION['subject_id'] =$_GET['subid'];
+  $subid=$_GET['subid'];
+  $sql1="select batch from `subject_details` WHERE `subject_id_pk`='$subid'";
+  $res2=mysqli_query($conn, $sql1);
+  while ($row = $res2->fetch_assoc()){
+    $batch=$row['batch'];
+  }
+  $_SESSION['batch']=$batch;
   ?>
 </head>
 <body>
