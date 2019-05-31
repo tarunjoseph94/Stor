@@ -27,7 +27,7 @@
 
             <?php
 
-            $sql1="SELECT DISTINCT subject_details.subject_id_pk ,subject_details.subject_name FROM subject_details LEFT JOIN student_details ON student_details.batch=subject_details.batch";
+            $sql1="SELECT DISTINCT subject_details.subject_id_pk ,subject_details.subject_name FROM subject_details LEFT JOIN student_details ON student_details.batch=subject_details.batch where subject_details.status='1'";
             $res=mysqli_query($conn, $sql1);
             while ($row = $res->fetch_assoc()){
              ?>

@@ -20,8 +20,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         while ($rows = $res->fetch_assoc()){
           ?>
           <div class="row">
-            <span class="usn-list"><?php echo $rows['usn'];?></span>
-            <button class="btn btn-color" onclick="deleteStudent('<?php echo $rows['usn']; ?>','<?php echo $batch; ?>')">Delete Student</button>
+            <div class col-sm-6>
+              <span class="usn-list"><?php echo $rows['usn'];?></span>
+            </div>
+            <div class="col-sm-6">
+              <button class="btn btn-color" onclick="deleteStudent('<?php echo $rows['usn']; ?>','<?php echo $batch; ?>')">Delete Student</button>
+            </div>
           </div>
           <div class="spacer">
           </div>

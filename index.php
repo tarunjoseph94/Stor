@@ -34,7 +34,7 @@
 											Password
 										</p>
 										<input type="password" class="form-control login-textbox" name="student-password-login" id="student-password-login"/>
-										<input type="submit" class=" btn btn-color" id="student-login-submit"/>
+										<input type="submit" value="Login" class=" btn btn-color" id="student-login-submit"/>
 									</form>
 									<div class="spacer">
 									</div>
@@ -51,7 +51,7 @@
 											Password
 										</p>
 										<input type="password" class="form-control login-textbox" name="faculty-password-login" id="faculty-password-login"/>
-										<input type="submit" class=" btn btn-color" name="faculty-login-submit" id="faculty-login-submit"/>
+										<input type="submit" value="Login" class=" btn btn-color" name="faculty-login-submit" id="faculty-login-submit"/>
 									</form>
 									<div class="spacer">
 									</div>
